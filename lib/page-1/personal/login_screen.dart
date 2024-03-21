@@ -61,8 +61,8 @@ class LogInScreen extends StatelessWidget {
                 const ButtonDesign(
                   hintStyle: TextStyle(color: grey, fontSize: 18),
                   hintText: ' كلمة السر ',
-                  keyboardType: TextInputType.number,
                   textAlign: TextAlign.right,
+                  isObscure: true,
                 ),
                 const SizedBox(
                   height: 75,
@@ -71,7 +71,7 @@ class LogInScreen extends StatelessWidget {
                   onTap: () {
                     Navigator.of(context)
                         .pushReplacement(MaterialPageRoute(builder: (context) {
-                      return MyHomeScreen();
+                      return const MyHomeScreen();
                     }));
                   },
                   width: 313,
@@ -155,7 +155,7 @@ class LogInScreen extends StatelessWidget {
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
-                color: Color(0xff510459),
+                color: darkPurple,
               ),
             ),
           ),

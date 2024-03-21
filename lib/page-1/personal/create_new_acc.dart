@@ -71,6 +71,7 @@ class _CreateNewAccState extends State<CreateNewAcc> {
                   hintText: ' كلمة السر ',
                   keyboardType: TextInputType.text,
                   textAlign: TextAlign.right,
+                  isObscure: true,
                 ),
                 const SizedBox(
                   height: 61,

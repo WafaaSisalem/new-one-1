@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_one1/page-1/requestCar/color.dart';
 import '../../widgets/my_button.dart';
 import 'create_new_acc.dart';
 import 'login_screen.dart';
@@ -76,8 +77,8 @@ class Introduction extends StatelessWidget {
                                   fontSize: 18,
                                   fontWeight: FontWeight.w600,
                                   decoration: TextDecoration.underline,
-                                  color: Color(0xff510459),
-                                  decorationColor: Color(0xff510459)),
+                                  color: darkPurple,
+                                  decorationColor: darkPurple),
                             ),
                           ])),
                 ),
