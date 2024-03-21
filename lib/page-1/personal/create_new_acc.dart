@@ -4,7 +4,6 @@ import 'package:new_one1/my_home_screen.dart';
 import '../../widgets/my_button.dart';
 import '../requestCar/AppBarDesign.dart';
 import '../requestCar/color.dart';
-import '../requestCar/pageDwsign.dart';
 import '../requestCar/phone_design.dart';
 import 'login_screen.dart';
 
@@ -17,7 +16,6 @@ class CreateNewAcc extends StatefulWidget {
 
 class _CreateNewAccState extends State<CreateNewAcc> {
   bool isChecked = false;
-  final PageDesign myPage = PageDesign(header: '');
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +96,7 @@ class _CreateNewAccState extends State<CreateNewAcc> {
                               });
                             },
                             fillColor: MaterialStateColor.resolveWith(
-                                (states) => const Color(0xff510459)),
+                                (states) => darkPurple),
                           ),
                         ),
                       ),
@@ -121,7 +119,7 @@ class _CreateNewAccState extends State<CreateNewAcc> {
                                 style: TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.w600,
-                                  color: Color(0xff510459),
+                                  color: darkPurple,
                                 ),
                               ),
                               TextSpan(
@@ -132,7 +130,7 @@ class _CreateNewAccState extends State<CreateNewAcc> {
                                 style: TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.w600,
-                                  color: Color(0xff510459),
+                                  color: darkPurple,
                                 ),
                               ),
                             ],
@@ -149,7 +147,7 @@ class _CreateNewAccState extends State<CreateNewAcc> {
                     onTap: () {
                       Navigator.of(context).pushReplacement(
                           MaterialPageRoute(builder: (context) {
-                        return MyHomeScreen();
+                        return const MyHomeScreen();
                       }));
                     },
                     width: 290,

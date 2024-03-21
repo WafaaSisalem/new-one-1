@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:new_one1/page-1/personal/trip_details_screen.dart';
 
-import '../requestCar/pageDwsign.dart';
-
 class ActivitiesTab extends StatelessWidget {
-  ActivitiesTab({Key? key}) : super(key: key);
-  final PageDesign myPage = PageDesign(header: '');
+  const ActivitiesTab({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
           child: child!,
         );
       },
-      home: MyHomeScreen(),
+      home: const DriverOrPassenger(),
       // home: const SignUpScreen(),
       debugShowCheckedModeBanner: false,
     );
