@@ -1,39 +1,34 @@
 import 'package:flutter/material.dart';
 
-import '../requestCar/pageDwsign.dart';
-
 class MyWalletScreen extends StatelessWidget {
   const MyWalletScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    PageDesign myPageDesign = PageDesign(
-      header: "محفظتي",
-    );
     return Scaffold(
-      //appBar: AppBarDesign.buildAppBar(),
+      appBar: AppBar(),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            SizedBox(
-              height: 63,
+            const SizedBox(
+              height: 20,
             ),
             // buildBackButton(),
             // SizedBox(
             //   height: 38.h,
             // ),
             buildMyWalletText(context),
-            SizedBox(
+            const SizedBox(
               height: 28,
             ),
             buildContainer(),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             buildPaymentMethodText(),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             buildMasterCardContainer()
@@ -45,10 +40,10 @@ class MyWalletScreen extends StatelessWidget {
 
   Container buildMasterCardContainer() {
     return Container(
-      width: 331,
+      width: double.infinity,
       height: 54,
       decoration: BoxDecoration(
-        color: Color(0x33975ab6),
+        color: const Color(0x33975ab6),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Padding(
@@ -56,7 +51,7 @@ class MyWalletScreen extends StatelessWidget {
         child: Align(
           alignment: Alignment.centerRight,
           child: Image.asset(
-            'assets/images/logos-mastercard.png',
+            'assets/images/mastercard.png',
             width: 38,
             height: 26,
           ),
@@ -70,19 +65,17 @@ class MyWalletScreen extends StatelessWidget {
       textDirection: TextDirection.rtl,
       children: [
         Image.asset(
-          'assets/images/auto-group-jvvh.png',
+          'assets/images/paymentMethod.png',
           width: 45,
-          height: 35,
+          height: 41,
         ),
-        SizedBox(
+        const SizedBox(
           width: 20,
         ),
-        Text(
+        const Text(
           'طرق الدفع',
           style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w700,
-              color: Colors.black),
+              fontSize: 20, fontWeight: FontWeight.w700, color: Colors.black),
         ),
       ],
     );
@@ -96,10 +89,10 @@ class MyWalletScreen extends StatelessWidget {
         color: const Color(0x33975ab6),
         borderRadius: BorderRadius.circular(10),
       ),
-      child: Padding(
+      child: const Padding(
         padding: EdgeInsets.only(right: 48),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
@@ -132,31 +125,21 @@ class MyWalletScreen extends StatelessWidget {
       textDirection: TextDirection.rtl,
       children: [
         Image.asset(
-          'assets/page-1/images/ph-wallet-fill-JyD.png',
+          'assets/images/wallet.png',
           width: 45,
           height: 41,
         ),
-        SizedBox(
+        const SizedBox(
           width: 20,
         ),
         GestureDetector(
-          child: Text(
+          child: const Text(
             'محفظتي',
             style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w700,
-                color: Colors.black),
+                fontSize: 20, fontWeight: FontWeight.w700, color: Colors.black),
           ),
         ),
       ],
-    );
-  }
-
-  Image buildBackButton() {
-    return Image.asset(
-      'assets/images/group-122.png',
-      width: 38,
-      height: 38,
     );
   }
 }

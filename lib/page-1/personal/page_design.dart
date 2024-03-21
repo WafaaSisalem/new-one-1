@@ -1,10 +1,9 @@
-//import 'dart:ffi' as ffi;
 import 'package:flutter/material.dart';
 
 import '../requestCar/color.dart';
 
 class PageDesign {
-   Color buttonColor = Colors.blue;
+  Color buttonColor = Colors.blue;
   final String header;
 
   PageDesign({
@@ -85,7 +84,7 @@ class PageDesign {
   Widget buildElevatedButton({
     required String buttonText,
     required VoidCallback onPressed,
-   // required Color buttonColor,
+    // required Color buttonColor,
     Color textColor = white,
     IconData? icon, // Make the icon optional
   }) {
@@ -110,8 +109,6 @@ class PageDesign {
       // child: buildText(text: buttonText, coloring: white),
     );
   }
-
-
 
   Widget buildOutlinedButton({
     required String buttonText,
@@ -141,8 +138,6 @@ class PageDesign {
       // const SizedBox(width: 8), // Add some spacing between text and icon
       //  if (icon != null) Icon(icon, color: textColor),
     );
-
-    
   }
 
   // Widget buildDropdownButton({

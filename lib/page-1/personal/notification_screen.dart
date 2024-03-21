@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:new_one1/page-1/personal/wallet.dart';
 
 import '../requestCar/AppBarDesign.dart';
@@ -13,14 +11,13 @@ class NotificationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBarDesign.buildAppBar(),
-
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(20 ),
+          padding: const EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 63,
               ),
               // buildBackButton(),
@@ -28,7 +25,7 @@ class NotificationScreen extends StatelessWidget {
               //   height: 38,
               // ),
               buildNotificationText(context),
-              SizedBox(
+              const SizedBox(
                 height: 28,
               ),
               buildContainer(),
@@ -43,13 +40,12 @@ class NotificationScreen extends StatelessWidget {
     return Container(
       height: 183,
       width: 350,
-      margin:EdgeInsets.only(left: 10),
-
+      margin: const EdgeInsets.only(left: 10),
       decoration: BoxDecoration(
-        color:pink,
+        color: pink,
         borderRadius: BorderRadius.circular(10),
       ),
-      child: Column(
+      child: const Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Row(
@@ -67,10 +63,7 @@ class NotificationScreen extends StatelessWidget {
               SizedBox(
                 width: 10,
               ),
-              SizedBox(
-                  width: 20,
-                  height: 20,
-                  child:Icon(Icons.update))
+              SizedBox(width: 20, height: 20, child: Icon(Icons.update))
             ],
           ),
           SizedBox(
@@ -93,33 +86,33 @@ class NotificationScreen extends StatelessWidget {
 
   Container buildNotificationText(context) {
     return Container(
-      margin: EdgeInsets.all(20),
-      child:  Row(
-      textDirection: TextDirection.rtl, 
-      children: [
-      Icon(Icons.notification_add,size: 40,color: grey,),
-        SizedBox(
-          width: 20,
-        ),
-        GestureDetector(
-          onTap: () {
-            Navigator.of(context)
-                .pushReplacement(MaterialPageRoute(builder: (context) {
-              return MyWalletScreen();
-            }));
-          },
-          child: Text(
-            'التنبيهات',
-            style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.w700,
-                color:grey),
+      margin: const EdgeInsets.all(20),
+      child: Row(
+        textDirection: TextDirection.rtl,
+        children: [
+          const Icon(
+            Icons.notification_add,
+            size: 40,
+            color: grey,
           ),
-        ),
-      ],
-    ),
+          const SizedBox(
+            width: 20,
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context)
+                  .pushReplacement(MaterialPageRoute(builder: (context) {
+                return const MyWalletScreen();
+              }));
+            },
+            child: const Text(
+              'التنبيهات',
+              style: TextStyle(
+                  fontSize: 25, fontWeight: FontWeight.w700, color: grey),
+            ),
+          ),
+        ],
+      ),
     );
   }
-
-
 }

@@ -2,10 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import '../personal/sign-upp.dart';
+import '../personal/introduction_screen.dart';
 import 'dashCam.dart';
 
 import 'package:flutter/material.dart';
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
@@ -27,16 +28,15 @@ class _SplashScreenState extends State<SplashScreen> {
     });
   }
 
-@override
+  @override
   Widget build(BuildContext context) {
-   
     return Container(
       width: double.infinity,
       child: Container(
-        decoration: BoxDecoration (
-          image: DecorationImage (
+        decoration: BoxDecoration(
+          image: DecorationImage(
             fit: BoxFit.cover,
-            image: AssetImage (
+            image: AssetImage(
               'assets/images/hello-bg.png',
             ),
           ),
@@ -45,11 +45,11 @@ class _SplashScreenState extends State<SplashScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-margin: EdgeInsets.only(bottom: 40,top: 300),              width: 250,
+              margin: EdgeInsets.only(bottom: 40, top: 300),
+              width: 250,
               height: 90,
               child: Image.asset(
                 'assets/images/-KoV.png',
-             
               ),
             ),
             Container(
@@ -63,6 +63,6 @@ margin: EdgeInsets.only(bottom: 40,top: 300),              width: 250,
           ],
         ),
       ),
-          );
+    );
   }
 }

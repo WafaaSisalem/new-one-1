@@ -1,16 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:new_one1/page-1/personal/DriverOrPass.dart';
-import 'package:new_one1/page-1/personal/log-inp.dart';
-import 'package:new_one1/page-1/personal/my_info.dart';
-import 'package:new_one1/page-1/requestCar/scheduleDetails.dart';
-import 'package:new_one1/page-1/requestCar/tripDetails.dart';
+import 'package:new_one1/my_home_screen.dart';
+import 'package:new_one1/page-1/personal/driver_or_passenger.dart';
+import 'package:new_one1/page-1/personal/account_settings_tab.dart';
+import 'package:new_one1/page-1/personal/activities_tab.dart';
+import 'package:new_one1/page-1/personal/notification_screen.dart';
+import 'package:new_one1/page-1/personal/receipt_screen.dart';
+import 'package:new_one1/page-1/personal/select_passenger_tab.dart';
+import 'package:new_one1/page-1/personal/trip_details_screen.dart';
+import 'package:new_one1/page-1/personal/wallet.dart';
+import 'package:new_one1/page-1/requestCar/mainFav.dart';
+import 'package:new_one1/page-1/requestCar/option.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +27,7 @@ class MyApp extends StatelessWidget {
           child: child!,
         );
       },
-      home: DriverOrPassenger(),
+      home: MyHomeScreen(),
       // home: const SignUpScreen(),
       debugShowCheckedModeBanner: false,
     );

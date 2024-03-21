@@ -1,76 +1,41 @@
 import 'package:flutter/material.dart';
-import 'dart:ui';
+import 'package:new_one1/page-1/personal/my_color.dart';
 
+import '../../widgets/my_button.dart';
 
-class SelectPassengerTab extends StatelessWidget {
-  const SelectPassengerTab({Key? key}) : super(key: key);
+class SelectPassengerTab extends StatefulWidget {
+  const SelectPassengerTab({super.key, required this.onTap});
+  final Function() onTap;
+  @override
+  State<SelectPassengerTab> createState() => _SelectPassengerTabState();
+}
+
+class _SelectPassengerTabState extends State<SelectPassengerTab> {
+  int chosenCard = 0;
   @override
   Widget build(BuildContext context) {
-    double baseWidth = 360;
-    double fem = MediaQuery.of(context).size.width / baseWidth;
-    double ffem = fem * 0.97;
-    return Container(
-      width: double.infinity,
-      child: Container(
-        // loginpyKD (335:153)
-        padding: EdgeInsets.fromLTRB(13 * fem, 13 * fem, 10.5 * fem, 16 * fem),
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: Color(0xfffcf6ff),
-          borderRadius: BorderRadius.circular(20 * fem),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Container(
-              // autogroup2lhufSw (H58jPjhmeRPbgd2oSN2LHu)
-              margin:
-                  EdgeInsets.fromLTRB(31 * fem, 0 * fem, 11.06 * fem, 21 * fem),
-              width: double.infinity,
-            ),
-            Container(
-              // group86SEj (335:168)
-              margin:
-                  EdgeInsets.fromLTRB(0 * fem, 0 * fem, 7.5 * fem, 22 * fem),
-              width: 38 * fem,
-              height: 39 * fem,
-              child: GestureDetector(
-                onTap: () {},
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(18.0),
+        child: SizedBox(
+          width: double.infinity,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(
+                height: 138,
+              ),
+              SizedBox(
+                width: 250,
+                height: 84,
                 child: Image.asset(
-                  'assets/page-1/images/group-86-pRM.png',
-                  width: 38 * fem,
-                  height: 39 * fem,
+                  'assets/images/SniperLogo.png',
                 ),
               ),
-            ),
-            Container(
-              // signalsolid19Q3 (335:155)
-              margin:
-                  EdgeInsets.fromLTRB(0 * fem, 0 * fem, 61.6 * fem, 19 * fem),
-              width: 1.8 * fem,
-              height: 1 * fem,
-              child: Image.asset(
-                'assets/page-1/images/signal-solid-1-TwV.png',
-                width: 1.8 * fem,
-                height: 1 * fem,
+              const SizedBox(
+                height: 46,
               ),
-            ),
-            Container(
-              // e5u (651:156)
-              margin: EdgeInsets.fromLTRB(
-                  0 * fem, 0 * fem, 39.5 * fem, 46.66 * fem),
-              width: 250 * fem,
-              height: 84.34 * fem,
-              child: Image.asset(
-                'assets/page-1/images/-PuR.png',
-                fit: BoxFit.cover,
-              ),
-            ),
-            Container(
-              // xcP (335:157)
-              margin: EdgeInsets.fromLTRB(0 * fem, 0 * fem, 0 * fem, 24 * fem),
-              width: double.infinity,
-              child: Text(
+              const Text(
                 'مرحبا بك، من يود الذهاب؟',
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -79,151 +44,80 @@ class SelectPassengerTab extends StatelessWidget {
                   color: Color(0xff000000),
                 ),
               ),
-            ),
-            Container(
-              // autogroup7qktGNB (H58jYQ81A9NbPZLjSx7qkT)
-              margin:
-                  EdgeInsets.fromLTRB(0 * fem, 0 * fem, 11.5 * fem, 11 * fem),
-              width: 325 * fem,
-              height: 103 * fem,
-              child: Stack(
-                children: [
-                  Positioned(
-                    // rectangle25nbR (335:158)
-                    left: 6 * fem,
-                    top: 0 * fem,
-                    child: Align(
-                      child: SizedBox(
-                        width: 319 * fem,
-                        height: 103 * fem,
-                        child: TextButton(
-                          onPressed: () {},
-                          style: TextButton.styleFrom(
-                            padding: EdgeInsets.zero,
-                          ),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10 * fem),
-                              color: Color(0x33975ab6),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    // fv7 (335:176)
-                    left: 237.1947021484 * fem,
-                    top: 38 * fem,
-                    child: Align(
-                      child: Text(
-                        'أنا',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 32,
-                          fontWeight: FontWeight.w600,
-                          color: Color(0xff4c1652),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    // xeK (335:179)
-                    left: 0 * fem,
-                    top: 5 * fem,
-                    child: Align(
-                      child: SizedBox(
-                        width: 161 * fem,
-                        height: 92 * fem,
-                        child: Image.asset(
-                          'assets/page-1/images/-4mM.png',
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
+              const SizedBox(
+                height: 23,
               ),
-            ),
-            Container(
-              // autogroupuy5y5iw (H58jfK69iESFdpoK57Uy5y)
-              margin:
-                  EdgeInsets.fromLTRB(0 * fem, 0 * fem, 14.5 * fem, 61 * fem),
-              width: 319 * fem,
-              height: 116 * fem,
-              child: Stack(
-                children: [
-                  Positioned(
-                    // rectangle26bxB (335:174)
-                    left: 0 * fem,
-                    top: 11 * fem,
-                    child: Align(
-                      child: SizedBox(
-                        width: 319 * fem,
-                        height: 105 * fem,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10 * fem),
-                            color: Color(0x7f975ab6),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    // 7fd (335:175)
-                    left: 199.6947021484 * fem,
-                    top: 38 * fem,
-                    child: Align(
-                      child: Text(
-                        'طفلي',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: 32,
-                          fontWeight: FontWeight.w600,
-                          color: Color(0xff4c1652),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    // zzK (335:178)
-                    left: 0 * fem,
-                    top: 0 * fem,
-                    child: Align(
-                      child: SizedBox(
-                        width: 149 * fem,
-                        height: 110 * fem,
-                        child: Image.asset(
-                          'assets/images/-dyH.png',
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
+              buildCard(
+                text: 'أنا',
+                imagePath: 'assets/images/parent.png',
+                onPressed: () {
+                  chosenCard = 0;
+                  setState(() {});
+                },
+                index: 0,
               ),
-            ),
-            Container(
-              // Kmh (335:159)
+              const SizedBox(
+                height: 20,
+              ),
+              buildCard(
+                  text: 'طفلي',
+                  imagePath: 'assets/images/child.png',
+                  onPressed: () {
+                    chosenCard = 1;
+                  },
+                  index: 1),
+              const SizedBox(
+                height: 61,
+              ),
+              MyButton(
+                  onTap: () {
+                    widget.onTap();
+                  },
+                  width: 313,
+                  widget: const Text(
+                    'التالي',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white,
+                    ),
+                  ))
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 
-              width: double.infinity,
-              height: 49 * fem,
-              decoration: BoxDecoration(
-                color: Color(0xff510459),
-                borderRadius: BorderRadius.circular(10 * fem),
-              ),
-              child: Center(
-                child: Text(
-                  'التالي',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.w600,
-                    color: Color(0xffffffff),
-                  ),
-                ),
-              ),
+  buildCard(
+      {required String text,
+      required String imagePath,
+      required Function() onPressed,
+      required int index}) {
+    return GestureDetector(
+      onTap: () {
+        onPressed();
+        setState(() {});
+      },
+      child: Container(
+        height: 103,
+        width: 319,
+        decoration: BoxDecoration(
+          // border: Border.all(color: darkPurple, width: 2),
+          // color: index == chosenCard ? pink : Colors.transparent,
+          borderRadius: BorderRadius.circular(10),
+          color: index == chosenCard ? darkpink : pink,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Text(
+              text,
+              style: const TextStyle(
+                  color: darkPurple, fontSize: 32, fontWeight: FontWeight.w600),
+            ),
+            Image.asset(
+              imagePath,
             ),
           ],
         ),

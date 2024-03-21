@@ -75,7 +75,7 @@ class carClass extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) =>
-                            tripDeatails(), // Replace ConnnScreen with your actual screen class
+                            TripDetails(), // Replace ConnnScreen with your actual screen class
                       ),
                     );
                   },
@@ -221,7 +221,7 @@ class carClass extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) =>
-                            tripDeatails(), // Replace ConnnScreen with your actual screen class
+                            TripDetails(), // Replace ConnnScreen with your actual screen class
                       ),
                     );
                   },
@@ -367,7 +367,7 @@ class carClass extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) =>
-                            tripDeatails(), // Replace ConnnScreen with your actual screen class
+                            TripDetails(), // Replace ConnnScreen with your actual screen class
                       ),
                     );
                   },

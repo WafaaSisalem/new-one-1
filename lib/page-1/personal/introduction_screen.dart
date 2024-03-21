@@ -1,15 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/widgets.dart';
-
 import '../../widgets/my_button.dart';
-import '../requestCar/color.dart';
-import '../requestCar/mainFav.dart';
-import '../requestCar/option.dart';
-import '../requestCar/phone_design.dart';
 import 'create_new_acc.dart';
-import 'log-inp.dart';
+import 'login_screen.dart';
 
 class Introduction extends StatelessWidget {
   const Introduction({Key? key}) : super(key: key);
@@ -20,10 +12,10 @@ class Introduction extends StatelessWidget {
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 18),
+            padding: const EdgeInsets.symmetric(horizontal: 18),
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 138,
                 ),
                 SizedBox(
@@ -33,19 +25,19 @@ class Introduction extends StatelessWidget {
                     'assets/images/SniperLogo.png',
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 51,
                 ),
-                Text('!ابحث عن رحلتك الممتعة',
+                const Text('!ابحث عن رحلتك الممتعة',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.w700,
                         color: Colors.black)),
-                SizedBox(
+                const SizedBox(
                   height: 68,
                 ),
-                Text(
+                const Text(
                     'استعد لتجربة فريدة! سنايبر يقدم لك و لطفلك لحظات لا تُنسى بطريقة ذكية ومتقدمة. انعم برحلات سهلة وآمنة، مع تقنيات متطورة مثل تحديد السيارة بالكاميرا. ومرافبة كاملة لطفلك أثناء الرحلة',
                     textAlign: TextAlign.center,
                     maxLines: 6,
@@ -53,19 +45,19 @@ class Introduction extends StatelessWidget {
                         fontSize: 20,
                         fontWeight: FontWeight.w500,
                         color: Color(0xff414141))),
-                SizedBox(
+                const SizedBox(
                   height: 65,
                 ),
                 GestureDetector(
                   onTap: () {
                     Navigator.of(context)
                         .pushReplacement(MaterialPageRoute(builder: (context) {
-                      return LogInScreen();
+                      return const LogInScreen();
                     }));
                   },
                   child: RichText(
                       textAlign: TextAlign.center,
-                      text: TextSpan(
+                      text: const TextSpan(
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w400,
@@ -89,18 +81,18 @@ class Introduction extends StatelessWidget {
                             ),
                           ])),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 25,
                 ),
                 MyButton(
                     onTap: () {
                       Navigator.of(context).pushReplacement(
                           MaterialPageRoute(builder: (context) {
-                        return CreateNewAcc();
+                        return const CreateNewAcc();
                       }));
                     },
                     width: 290,
-                    widget: Text(
+                    widget: const Text(
                       'حساب جديد',
                       style: TextStyle(
                         fontSize: 18,

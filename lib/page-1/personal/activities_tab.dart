@@ -1,45 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:new_one1/page-1/personal/trip_details_screen.dart';
 
-import '../requestCar/AppBarDesign.dart';
 import '../requestCar/pageDwsign.dart';
-class activities_tab extends StatelessWidget {
-   activities_tab({Key? key}) : super(key: key);
-          final PageDesign myPage = PageDesign(header: '');
+
+class ActivitiesTab extends StatelessWidget {
+  ActivitiesTab({Key? key}) : super(key: key);
+  final PageDesign myPage = PageDesign(header: '');
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      appBar: AppBarDesign.buildAppBar(),
       body: SingleChildScrollView(
-      child: Padding(
-      padding: EdgeInsets.symmetric(horizontal: 17),
-      child: Column(
-        children: [
-          SizedBox(
-            height: 90,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 17),
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 90,
+              ),
+              buildActivitiesText(),
+              const SizedBox(
+                height: 20,
+              ),
+              buildRowTitle(
+                  text: 'أنشطة مجدولة', iconPath: 'assets/images/calender.png'),
+              const SizedBox(
+                height: 10,
+              ),
+              buildActivityDetails(context),
+              const SizedBox(
+                height: 10,
+              ),
+              buildRowTitle(
+                  text: 'أنشطة سابقة', iconPath: 'assets/images/schedulle.png'),
+              buildActivityDetails(context),
+            ],
           ),
-          buildActivitiesText(),
-          SizedBox(
-            height: 20,
-          ),
-          buildRowTitle(
-              text: 'أنشطة مجدولة',
-              iconPath: 'assets/images/calender.png'),
-          SizedBox(
-            height: 10,
-          ),
-          buildActivityDetails(context),
-          SizedBox(
-            height: 10,
-          ),
-          buildRowTitle(
-              text: 'أنشطة سابقة',
-              iconPath: 'assets/images/schedulle.png'),
-          buildActivityDetails(context),
-        ],
-      ),
-      ),
+        ),
       ),
     );
   }
@@ -48,7 +45,7 @@ class activities_tab extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           height: 118,
           width: double.infinity,
           decoration: BoxDecoration(
@@ -56,41 +53,33 @@ class activities_tab extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
           ),
           child: Row(
-            textDirection: TextDirection.rtl,
             children: [
               Expanded(
                 flex: 1,
-                child: SizedBox(
-                  width: 109,
-                  height: 87,
-                  child: Stack(
-                    children: [
-                      Image.asset(
-                        'assets/images/yellowCar.png',
-                        fit: BoxFit.cover,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Image.asset(
+                      'assets/images/yellowCar.png',
+                      width: 83,
+                      height: 64,
+                      fit: BoxFit.cover,
+                    ),
+                    const Text(
+                      'Sniper اقتصادي',
+                      style: TextStyle(
+                        fontSize: 10,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black,
                       ),
-                      Positioned(
-                        child: Text(
-                          'Sniper اقتصادي',
-                          style: TextStyle(
-                            fontSize: 10,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black,
-                          ),
-                        ),
-                        bottom: 10,
-                      )
-                    ],
-                  ),
+                    )
+                  ],
                 ),
-              ),
-              SizedBox(
-                width: 26,
               ),
               Expanded(
                 flex: 2,
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Expanded(
                       child: buildCardItem(text: 'البيت'),
@@ -110,7 +99,30 @@ class activities_tab extends StatelessWidget {
         Positioned(
           left: 10,
           bottom: 10,
-          child: myPage.buildElevatedButton(buttonText: 'تفاصيل', onPressed: (){})
+          child: GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                return const TripDetailsScreen();
+              }));
+            },
+            child: Container(
+              height: 30,
+              width: 62,
+              padding: const EdgeInsets.all(6),
+              decoration: BoxDecoration(
+                  color: const Color(0xff510459),
+                  borderRadius: BorderRadius.circular(4)),
+              child: const Text(
+                'تفاصيل ',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          ),
         )
       ],
     );
@@ -119,7 +131,7 @@ class activities_tab extends StatelessWidget {
   buildCardItem({required text}) {
     return Text(
       text,
-      style: TextStyle(
+      style: const TextStyle(
         fontSize: 12,
         fontWeight: FontWeight.w700,
         color: Colors.black,
@@ -129,20 +141,19 @@ class activities_tab extends StatelessWidget {
 
   Row buildRowTitle({required text, required iconPath}) {
     return Row(
-      textDirection: TextDirection.rtl,
       children: [
         Image.asset(
           iconPath,
           width: 21,
           height: 19,
         ),
-        SizedBox(
+        const SizedBox(
           width: 10,
         ),
         Text(
           text,
           textAlign: TextAlign.center,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w700,
             color: Color(0xff737373),
@@ -154,9 +165,8 @@ class activities_tab extends StatelessWidget {
 
   Row buildActivitiesText() {
     return Row(
-      textDirection: TextDirection.rtl,
       children: [
-        SizedBox(
+        const SizedBox(
           width: 23,
         ),
         Image.asset(
@@ -164,15 +174,13 @@ class activities_tab extends StatelessWidget {
           width: 45,
           height: 45,
         ),
-        SizedBox(
+        const SizedBox(
           width: 20,
         ),
-        Text(
+        const Text(
           'الأنشطة',
           style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w700,
-              color: Colors.black),
+              fontSize: 20, fontWeight: FontWeight.w700, color: Colors.black),
         ),
       ],
     );
